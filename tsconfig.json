@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2022"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "declaration": true,
+    "verbatimModuleSyntax": true,
+    "noUncheckedIndexedAccess": true,
+
+		"allowJs": true,
+		"esModuleInterop": true,
+    "outDir": "dist",
+    "noEmit": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "resolveJsonModule": true,
+    "moduleResolution": "Bundler",
+
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "paths": {
+      "@/*": ["./src/*"],
+    }
+  },
+  "include": ["src", "commitlint.config.ts", ".nano-staged.js", "vitest.config.ts", "release.config.js"],
+  "exclude": ["node_modules", "dist"]
+}
