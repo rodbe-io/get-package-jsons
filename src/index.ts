@@ -87,3 +87,5 @@ export const getAllPackageJsons = ({ cwd }: GetAllPackageJsonsProps) => {
 
   return packageJsonsMapper({ cwd, packageJsonPaths });
 };
+
+export type * from './script.types';
