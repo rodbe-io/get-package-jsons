@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/rodbe-io/get-package-jsons/compare/v1.2.0...v1.3.0) (2025-01-20)
+
+
+### Features
+
+* export script type ([add63fb](https://github.com/rodbe-io/get-package-jsons/commit/add63fbc862e198aac2ddc00762e82db06367623))
+
 ## [1.2.0](https://github.com/rodbe-io/get-package-jsons/compare/v1.1.0...v1.2.0) (2025-01-20)
 
 
