@@ -56,8 +56,8 @@ const packageJsonsMapper = ({ cwd, packageJsonPaths }: PackageJsonsMapperProps):
         .replace('package.json', '')
         .replace(/^\/|\/$/g, '') || 'Root';
 
-    if (!acc[name]) {
-      acc[name] = {
+    if (!acc[folderContainer]) {
+      acc[folderContainer] = {
         engines,
         folderContainer,
         packageManager,
