@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { tryCatch } from '@rodbe/fn-utils';
 
 import { FOLDERS_TO_IGNORE } from './constants';
-import type { NormalizedScripts, PackageJson } from './script.types';
+import type { NormalizedScripts, PackageJson, Script } from './script.types';
 
 interface GetPackageJsonPathsProps {
   absolutePath: string;
@@ -29,8 +29,12 @@ const getPackageJsonPaths = ({ absolutePath, fileListAccumulator }: GetPackageJs
   return fileList;
 };
 
-const scriptsMapper = (scripts: PackageJson['scripts']) => {
-  return Object.entries(scripts).map(([scriptName, scriptContent]) => ({
+const scriptsMapper = (scripts: PackageJson['scripts']): Array<Script> | undefined => {
+  if (!scripts) {
+    return;
+  }
+
+  return Object.entries(scripts).map<Script>(([scriptName, scriptContent]) => ({
     content: scriptContent,
     name: scriptName,
   }));

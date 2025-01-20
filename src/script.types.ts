@@ -1,4 +1,4 @@
-interface Script {
+export interface Script {
   content: string;
   name: string;
 }
@@ -18,17 +18,17 @@ interface Engines {
 
 export interface PackageJson {
   engines?: Engines;
-  name: string;
+  name?: string;
   packageManager?: string;
-  scripts: Record<string, string>;
-  version: string;
+  scripts?: Record<string, string>;
+  version?: string;
   volta?: Volta;
 }
 
 type MappedPackageJson = Omit<PackageJson, 'name' | 'scripts'> & {
   folderContainer: string;
-  packageName: string;
-  scripts: Array<Script>;
+  packageName?: string;
+  scripts?: Array<Script>;
 };
 
 export type NormalizedScripts = Record<string, MappedPackageJson>;
