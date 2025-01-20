@@ -1,0 +1,16 @@
+export const FOLDERS_TO_IGNORE = [
+  '_',
+  '.git',
+  '.github',
+  '.husky',
+  '.nx',
+  '.Trash',
+  '.vscode',
+  'assets',
+  'build',
+  'cache',
+  'dist',
+  'node_modules',
+  'patches',
+  'results',
+];

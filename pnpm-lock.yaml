@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@rodbe/fn-utils':
+        specifier: ^1.5.0
+        version: 1.5.0
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.6.1
@@ -80,9 +84,6 @@ importers:
       semantic-release:
         specifier: 20.1.0
         version: 20.1.0(typescript@5.7.2)
-      simple-git-hooks:
-        specifier: ^2.11.1
-        version: 2.11.1
       typescript:
         specifier: ^5.2.2
         version: 5.7.2
@@ -649,6 +650,10 @@ packages:
   '@pnpm/npm-conf@2.3.1':
     resolution: {integrity: sha512-c83qWb22rNRuB0UaVCI0uRPNRr8Z0FWnEIvT47jiHAmOIUHbBOg5XvV7pM5x+rKn9HRpjxquDbXYSXr3fAKFcw==}
     engines: {node: '>=12'}
+
+  '@rodbe/fn-utils@1.5.0':
+    resolution: {integrity: sha512-5GOJ6Al7VUHDd5HZySmBn9eltsp2rfCLXkr26DUTnaGCWh2YTE/WkjqKrUp0xtqmiD6Qp7D6PIt+ALnL/LtpQg==}
+    engines: {node: '>= 18.18.2', npm: '>= 8.11.0', pnpm: '>= 9.15.2'}
 
   '@rollup/plugin-alias@5.1.1':
     resolution: {integrity: sha512-PR9zDb+rOzkRb2VD+EuKB7UC41vU5DIwZ5qqCpk0KJudcWAyi8rvYOhS7+L5aZCspw1stTViLgN5v6FF1p5cgQ==}
@@ -2831,10 +2836,6 @@ packages:
     resolution: {integrity: sha512-iuh+gPf28RkltuJC7W5MRi6XAjTDCAPC/prJUpQoG4vIP3MJZ+GTydVnodXA7pwvTKb2cA0m9OFZW/cdWy/I/w==}
     engines: {node: '>=6'}
 
-  simple-git-hooks@2.11.1:
-    resolution: {integrity: sha512-tgqwPUMDcNDhuf1Xf6KTUsyeqGdgKMhzaH4PAZZuzguOgTl5uuyeYe/8mWgAr6IBxB5V06uqEf6Dy37gIWDtDg==}
-    hasBin: true
-
   slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
@@ -3744,6 +3745,8 @@ snapshots:
       '@pnpm/config.env-replace': 1.1.0
       '@pnpm/network.ca-file': 1.0.2
       config-chain: 1.1.13
+
+  '@rodbe/fn-utils@1.5.0': {}
 
   '@rollup/plugin-alias@5.1.1(rollup@4.29.1)':
     optionalDependencies:
@@ -5896,8 +5899,6 @@ snapshots:
       chalk: 2.4.2
       figures: 2.0.0
       pkg-conf: 2.1.0
-
-  simple-git-hooks@2.11.1: {}
 
   slash@3.0.0: {}
 
