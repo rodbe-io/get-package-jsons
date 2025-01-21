@@ -1,3 +1,14 @@
+## [2.0.0](https://github.com/rodbe-io/get-package-jsons/compare/v1.3.0...v2.0.0) (2025-01-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename props: name and content to scriptName and scriptContent
+
+### Features
+
+* rename output props for script object ([d101fa4](https://github.com/rodbe-io/get-package-jsons/commit/d101fa4cfe9f7f7fc51eb905f207c982d85d13f0))
+
 ## [1.3.0](https://github.com/rodbe-io/get-package-jsons/compare/v1.2.0...v1.3.0) (2025-01-20)
 
 
