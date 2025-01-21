@@ -35,8 +35,8 @@ const scriptsMapper = (scripts: PackageJson['scripts']): Array<Script> | undefin
   }
 
   return Object.entries(scripts).map<Script>(([scriptName, scriptContent]) => ({
-    content: scriptContent,
-    name: scriptName,
+    scriptContent,
+    scriptName,
   }));
 };
 

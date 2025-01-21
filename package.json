@@ -3,6 +3,11 @@
   "bugs": {
     "url": "https://github.com/rodbe-io/get-package-jsons/issues"
   },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
   "dependencies": {
     "@rodbe/fn-utils": "^1.5.0"
   },
@@ -10,6 +15,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
+    "@commitlint/cz-commitlint": "^19.6.1",
     "@commitlint/format": "^19.5.0",
     "@commitlint/types": "^19.5.0",
     "@eslint/js": "^9.17.0",
@@ -68,6 +74,7 @@
   },
   "scripts": {
     "build": "pkgroll",
+    "commit": "git-cz",
     "commitlint": "commitlint --edit",
     "prebuild": "pnpm run type-check",
     "prepare": "husky || true",

@@ -1,6 +1,6 @@
 export interface Script {
-  content: string;
-  name: string;
+  scriptContent: string;
+  scriptName: string;
 }
 
 interface Volta {
