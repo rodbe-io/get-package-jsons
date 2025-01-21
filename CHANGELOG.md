@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/rodbe-io/get-package-jsons/compare/v2.0.0...v2.0.1) (2025-01-21)
+
+
+### Bug Fixes
+
+* regex for root package ([d7eb370](https://github.com/rodbe-io/get-package-jsons/commit/d7eb370ce4c4b60dc0b65e6588cd7cf94a8d0655))
+
 ## [2.0.0](https://github.com/rodbe-io/get-package-jsons/compare/v1.3.0...v2.0.0) (2025-01-21)
 
 
