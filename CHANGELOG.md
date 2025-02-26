@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/rodbe-io/get-package-jsons/compare/v3.0.0...v3.0.1) (2025-02-26)
+
+
+### Bug Fixes
+
+* remove log ([02f54a3](https://github.com/rodbe-io/get-package-jsons/commit/02f54a386f4120900a5e77b9632655d7946021c4))
+
 ## [3.0.0](https://github.com/rodbe-io/get-package-jsons/compare/v2.0.1...v3.0.0) (2025-02-26)
 
 
