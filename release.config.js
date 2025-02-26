@@ -30,7 +30,8 @@ export default {
         presetConfig: {
           changelogHeader:
             '# Hi\n\n bais hi lorem ipsum ![Insomnia API Client](https://raw.githubusercontent.com/Kong/insomnia/develop/screenshots/main.png)',
-          compareUrlFormat: '{{host}}/{{owner}}/{{repository}}/compare/{{previousTag}}...{{currentTag}}',
+          compareUrlFormat:
+            '{{host}}/{{owner}}/{{repository}}/compare/{{previousTag}}...{{currentTag}}',
           issuePrefixes: ['#'],
           issueUrlFormat: '{{host}}/{{owner}}/{{repository}}/bug/{{id}}',
         },

@@ -14,9 +14,11 @@ interface GetPackageJsonPathsProps {
 const getPackageJsonPaths = ({ absolutePath, fileListAccumulator }: GetPackageJsonPathsProps) => {
   let fileList = fileListAccumulator ?? [];
   const filesAndFolderNames = readdirSync(absolutePath);
-  const filteredLs = filesAndFolderNames.filter(fileOrFolderName => !FOLDERS_TO_IGNORE.includes(fileOrFolderName));
+  const filteredLs = filesAndFolderNames.filter(
+    (fileOrFolderName) => !FOLDERS_TO_IGNORE.includes(fileOrFolderName)
+  );
 
-  filteredLs.forEach(fileOrFolderName => {
+  filteredLs.forEach((fileOrFolderName) => {
     const filePath = join(absolutePath, fileOrFolderName);
 
     if (statSync(filePath, { throwIfNoEntry: false })?.isDirectory()) {
@@ -45,15 +47,20 @@ interface PackageJsonsMapperProps {
   packageJsonPaths: Array<string>;
 }
 
-const packageJsonsMapper = ({ cwd, packageJsonPaths }: PackageJsonsMapperProps): NormalizedScripts => {
+const packageJsonsMapper = ({
+  cwd,
+  packageJsonPaths,
+}: PackageJsonsMapperProps): NormalizedScripts => {
   return packageJsonPaths.reduce<NormalizedScripts>((acc, pkgJsonPath) => {
-    const [err, pkgJson] = tryCatch<PackageJson>(() => JSON.parse(readFileSync(pkgJsonPath, 'utf-8')) as PackageJson);
+    const [err, pkgJson] = tryCatch<PackageJson>(
+      () => JSON.parse(readFileSync(pkgJsonPath, 'utf-8')) as PackageJson
+    );
 
     if (err) {
       return acc;
     }
 
-    const { engines, scripts, packageManager, name, version, volta } = pkgJson;
+    const { scripts, ...extraProps } = pkgJson;
     const folderContainer =
       pkgJsonPath
         .replace(cwd, '')
@@ -62,13 +69,9 @@ const packageJsonsMapper = ({ cwd, packageJsonPaths }: PackageJsonsMapperProps):
 
     if (!acc[folderContainer]) {
       acc[folderContainer] = {
-        engines,
         folderContainer,
-        packageManager,
-        packageName: name,
         scripts: scriptsMapper(scripts),
-        version,
-        volta,
+        ...extraProps,
       };
     }
 
