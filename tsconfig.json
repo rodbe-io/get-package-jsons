@@ -5,6 +5,6 @@
     }
   },
   "exclude": ["node_modules", "dist"],
-  "extends": "@rodbe/tsconfig/bundler/no-dom/app",
+  "extends": "@rodbe/tsconfig/bundler/no-dom/lib",
   "include": ["src", "commitlint.config.ts", ".nano-staged.js", "vitest.config.ts", "release.config.js"]
 }
