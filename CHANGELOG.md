@@ -1,3 +1,14 @@
+## [3.0.0](https://github.com/rodbe-io/get-package-jsons/compare/v2.0.1...v3.0.0) (2025-02-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* update returned pkg.json structure
+
+### Features
+
+* update returned pkg.json structure ([dd21cf9](https://github.com/rodbe-io/get-package-jsons/commit/dd21cf9a2321b3a1a3499230c869b6873a78bfbd))
+
 ## [2.0.1](https://github.com/rodbe-io/get-package-jsons/compare/v2.0.0...v2.0.1) (2025-01-21)
 
 
