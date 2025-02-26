@@ -87,8 +87,6 @@ export const getAllPackageJsons = ({ cwd }: GetAllPackageJsonsProps) => {
   const packageJsonPaths = getPackageJsonPaths({ absolutePath: cwd });
 
   if (packageJsonPaths.length === 0) {
-    console.log('No package.json files found.');
-
     return null;
   }
 
