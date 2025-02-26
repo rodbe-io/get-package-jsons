@@ -3,19 +3,51 @@ import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import js from '@eslint/js';
+import json from '@eslint/json';
 import tsEslint from 'typescript-eslint';
 import prettier from 'eslint-plugin-prettier/recommended';
 import packageJson from 'eslint-plugin-package-json/configs/recommended';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const eslintConfig = tsEslint.config(
+// eslint-disable-next-line no-restricted-exports
+export default tsEslint.config(
   { ignores: ['**/dist/', '**/docs/', '**/coverage/', '**/*.d.ts', 'node_modules'] },
-  js.configs.recommended,
-  tsEslint.configs.strictTypeChecked,
-  tsEslint.configs.stylisticTypeChecked,
-  packageJson,
   {
+    files: ['**/*.json'],
+    ignores: ['**/package-lock.json', '**/package.json'],
+    language: 'json/json',
+    ...json.configs.recommended,
+    rules: {
+      ...json.configs.recommended.rules,
+      'json/sort-keys': 'error',
+    },
+  },
+  {
+    files: ['**/*.jsonc'],
+    language: 'json/jsonc',
+    ...json.configs.recommended,
+    rules: {
+      ...json.configs.recommended.rules,
+      'json/sort-keys': 'error',
+    },
+  },
+  {
+    files: ['**/*.json5'],
+    language: 'json/json5',
+    ...json.configs.recommended,
+    rules: {
+      ...json.configs.recommended.rules,
+      'json/sort-keys': 'error',
+    },
+  },
+  {
+    extends: [
+      js.configs.recommended,
+      tsEslint.configs.strictTypeChecked,
+      tsEslint.configs.stylisticTypeChecked,
+    ],
+    files: ['**/*.js', '**/*.ts'],
     languageOptions: {
       parserOptions: {
         projectService: {
@@ -24,8 +56,6 @@ const eslintConfig = tsEslint.config(
         tsconfigRootDir: __dirname,
       },
     },
-  },
-  {
     rules: {
       '@typescript-eslint/array-type': [
         'error',
@@ -79,7 +109,7 @@ const eslintConfig = tsEslint.config(
           },
         },
       ],
-      'no-unused-vars': 'warn',
+      'no-unused-vars': 'off',
       'sort-imports': [
         'error',
         {
@@ -102,8 +132,6 @@ const eslintConfig = tsEslint.config(
       'spaced-comment': 'error',
     },
   },
+  packageJson,
   prettier
 );
-
-// eslint-disable-next-line no-restricted-exports
-export default eslintConfig;
